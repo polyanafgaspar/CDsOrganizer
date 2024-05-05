@@ -41,7 +41,7 @@ public class User {
     @Column(name = "password", length = 60, nullable = false)
     @JsonProperty(access = Access.WRITE_ONLY)
     @NotBlank
-    @Size(min = 8, max = 60)
+    @Size(min = 4, max = 60)
     private String password;
 
     @OneToMany(mappedBy = "user")

@@ -1,5 +1,6 @@
 package com.polyana.cds_organizer.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,12 @@ public class CdsService {
       "Cd não encontrado!"
     ));
   }
+
+  public List<Cds> findAllByUserId(Long userId) {
+    List<Cds> cds = this.cdsRepository.findByUser_Id(userId);
+    return cds;
+   }
+
 
   @Transactional
   public Cds create(Cds obj){
